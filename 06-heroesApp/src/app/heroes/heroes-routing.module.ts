@@ -12,7 +12,7 @@ const routes: Routes = [
         path: 'new-hero',
         component: NewPageComponent
       }
-    ]
+    ],
   }
 ];
 
