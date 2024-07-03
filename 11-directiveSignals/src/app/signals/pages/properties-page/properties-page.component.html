@@ -1,0 +1,38 @@
+<h1>Mutaciones</h1>
+<hr>
+
+<div class="row">
+
+  <div class="col-6">
+    <input
+      #txtEmail
+      type="text"
+      placeholder="Email"
+      class="form-control mb-3"
+      (input)="onFieldUpdate( 'email', txtEmail.value )"
+    >
+    <input
+      #txtFirstName
+      type="text"
+      placeholder="Nombre"
+      class="form-control mb-3"
+      (input)="onFieldUpdate( 'first_name', txtFirstName.value )"
+    >
+    <input
+      #txtLastName
+      type="text"
+      placeholder="Apellidos"
+      class="form-control mb-3"
+      (input)="onFieldUpdate( 'last_name', txtLastName.value )"
+    >
+  </div>
+
+  <div class="col-6">
+    <!-- Data del usuario -->
+     <h3>{{ fullName() }}</h3>
+     <pre>
+      {{ user() | json}}
+     </pre>
+  </div>
+
+</div>
