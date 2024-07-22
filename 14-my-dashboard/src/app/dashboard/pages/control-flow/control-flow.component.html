@@ -1,0 +1,67 @@
+
+<app-title title="Control Flow" withShadow />
+
+<section class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+  <!-- NG if -->
+  <div class="bg-white rounded shadow p-10">
+
+    <h2 class="text-2xl font-bold mb-5">if: {{ showContent() }}</h2>
+
+    <button class="p-2 bg-blue-500 rounded text-white hover:bg-blue-950 transition-colors" (click)="toggleContent()">
+      Click me!
+    </button>
+
+    @if ( showContent() ) {
+    <p>Hola mundo</p>
+    } @else {
+    <p>***********</p>
+    }
+
+  </div>
+
+  <!-- NG switch -->
+  <div class="bg-white rounded shadow p-10">
+
+    <h2 class="text-2xl font-bold mb-5">Nota: {{ grade() }}</h2>
+
+    @switch ( grade() ) {
+      @case ('A') {
+        <p>Superior a 90</p>
+      }
+      @case ('B') {
+        <p>Superior a 80</p>
+      }
+      @default {
+        <p>Suspenso</p>
+      }
+    }
+
+  </div>
+
+  <!-- NG for -->
+  <div class="bg-white rounded shadow p-10">
+
+    <ul>
+      @for (framework of frameworks(); track framework; let i = $index) {
+        <li>{{ i + 1 }}. {{ framework }}</li>
+      }
+    </ul>
+
+
+
+  </div>
+
+  <div class="bg-white rounded shadow p-10">
+    <ul>
+      @for (framework of frameworks2(); track framework; let i = $index) {
+        <li>{{ i }}. {{ framework }}</li>
+      } @empty {
+        <li>No hay frameworks agregados</li>
+      }
+    </ul>
+  </div>
+
+</section>
+
+
