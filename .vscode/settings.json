@@ -1,4 +1,12 @@
 {
     "angular-schematics.angularDisableProjectPathCheck": true,
-    "css.customData": [".vscode/css_custom_data.json"]
+    "css.customData": [
+        ".vscode/css_custom_data.json"
+    ],
+    "angular-schematics.schematicsDefaultOptions": {
+        "angular-*": {
+            "externalTemplate": true,
+            "inlineStyle": true
+        }
+    }
 }

@@ -46,6 +46,16 @@ export const routes: Routes = [
         loadComponent: () => import('./dashboard/pages/view-transition/view-transition2.component')
       },
       {
+        path: 'inputs-outputs',
+        title: 'Inputs Outputs',
+        loadComponent: () => import('./dashboard/pages/input-output/input-output.component')
+      },
+      {
+        path: 'material',
+        title: 'Angular Material',
+        loadComponent: () => import('./dashboard/pages/material/material.component')
+      },
+      {
         path: '',
         redirectTo: 'control-flow',
         pathMatch: 'full'
@@ -54,7 +64,9 @@ export const routes: Routes = [
   },
   {
     path:'',
-    redirectTo:'/dashboard',
+    redirectTo: (route) => {
+      return 'dashboard';
+    },
     pathMatch:'full'
   }
 ];
